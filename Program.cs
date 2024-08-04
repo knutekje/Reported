@@ -20,7 +20,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddDbContext<ReportedContext>(options =>
-    options.UseNpgsql("Host=35.228.204.122 ;Database=ryvo;Username=knutekje;Password=hore23"));
+    options.UseNpgsql("Host=35.228.204.122;Database=ryvo;Username=knutekje;Password=hore23"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,6 +31,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(builder => builder
+       .AllowAnyHeader()
+       .AllowAnyMethod()
+       .AllowAnyOrigin()
+    );
+app.UseRouting(); 
 
 app.UseAuthorization();
 

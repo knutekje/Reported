@@ -11,9 +11,7 @@ public class ReportedContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Report>().ToTable("Reports");
-        modelBuilder.Entity<VerifiedReport>().ToTable("VerifiedReports");
-        modelBuilder.Entity<Item>().ToTable("Items");
+     
 
         modelBuilder.Entity<VerifiedReport> ()
             .HasOne(vr => vr.Item)
