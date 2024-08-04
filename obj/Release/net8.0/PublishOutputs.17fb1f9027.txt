@@ -1,0 +1,16 @@
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Reported
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/appsettings.Development.json
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/appsettings.json
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Reported.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Reported.runtimeconfig.json
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Reported.pdb
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Microsoft.EntityFrameworkCore.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Microsoft.EntityFrameworkCore.Relational.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Microsoft.OpenApi.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Npgsql.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Swashbuckle.AspNetCore.Swagger.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/knutekje/Documents/Code/Reported/bin/Release/net8.0/publish/Reported.deps.json

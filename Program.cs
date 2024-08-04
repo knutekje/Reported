@@ -20,7 +20,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddDbContext<ReportedContext>(options =>
-    options.UseNpgsql("Host=35.228.204.122;Database=ryvo;Username=knutekje;Password=hore23"));
+    options.UseNpgsql("Host=192.168.0.107;Database=reporteddb;Username=reported;Password=KlU91Xp"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

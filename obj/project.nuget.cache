@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "w5766HNwP1EHblLSgzN2isXvl4Uot8yp5WjUjigF5vbyO35YPgtd+tN9sdcY0AlxHrnpgWai7WYOgzVp6PyFbw==",
+  "dgSpecHash": "r6dCXXuZQyG+78ignGrrKb5bq6VQHrSSSWRrYnY+hMgjCf+Dvsy01f9cRxcHM4PTZA3JdnYBJY1ZjQR1regUQw==",
   "success": true,
   "projectFilePath": "/home/knutekje/Documents/Code/Reported/Reported.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "/home/knutekje/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.7/microsoft.entityframeworkcore.analyzers.8.0.7.nupkg.sha512",
     "/home/knutekje/.nuget/packages/microsoft.entityframeworkcore.design/8.0.7/microsoft.entityframeworkcore.design.8.0.7.nupkg.sha512",
     "/home/knutekje/.nuget/packages/microsoft.entityframeworkcore.relational/8.0.7/microsoft.entityframeworkcore.relational.8.0.7.nupkg.sha512",
+    "/home/knutekje/.nuget/packages/microsoft.entityframeworkcore.tools/8.0.7/microsoft.entityframeworkcore.tools.8.0.7.nupkg.sha512",
     "/home/knutekje/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/home/knutekje/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "/home/knutekje/.nuget/packages/microsoft.extensions.caching.memory/8.0.0/microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",

@@ -2,7 +2,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
-using Reported.Migrations;
+
 using Reported.Model.Report;
 
 [ApiController]

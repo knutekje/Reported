@@ -29,12 +29,9 @@ namespace Reported.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<string>("Description")
+                    b.Property<string>("ExternalId")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<int>("ExternalId")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -43,13 +40,13 @@ namespace Reported.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("unit")
+                    b.Property<string>("Unit")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Items", (string)null);
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("Reported.Model.Report.Report", b =>
@@ -67,7 +64,6 @@ namespace Reported.Migrations
                         .HasColumnType("text");
 
                     b.Property<byte[]>("Image")
-                        .IsRequired()
                         .HasColumnType("bytea");
 
                     b.Property<string>("ReportedBy")
@@ -80,7 +76,7 @@ namespace Reported.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Reports", (string)null);
+                    b.ToTable("Reports");
                 });
 
             modelBuilder.Entity("VerifiedReport", b =>
@@ -117,7 +113,7 @@ namespace Reported.Migrations
                     b.HasIndex("ItemId")
                         .IsUnique();
 
-                    b.ToTable("VerifiedReports", (string)null);
+                    b.ToTable("VerifiedReports");
                 });
 
             modelBuilder.Entity("VerifiedReport", b =>
