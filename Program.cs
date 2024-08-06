@@ -31,13 +31,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting(); 
 app.UseCors(builder => builder
        .AllowAnyHeader()
        .AllowAnyMethod()
        .AllowAnyOrigin()
     );
-app.UseRouting(); 
-
 app.UseAuthorization();
 
 app.MapControllers();

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Reported.Model.Report;
 
 [ApiController]
-[Route("[controller]")]
+[Route("report/[controller]")]
 public class ReportController : ControllerBase{
     private readonly ReportedContext _context;
 
