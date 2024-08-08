@@ -22,6 +22,20 @@ public class ReportController : ControllerBase{
         return _context.Reports.ToList();
 
     }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Report>>  GetReport (long id)
+     
+    {
+        var report = await _context.Reports.FindAsync(id);
+        if (report == null)
+        {
+            return NotFound();
+        }
+        return report;
+
+
+    }
+
 
 
 
@@ -39,7 +53,8 @@ public class ReportController : ControllerBase{
     }
 
     [HttpDelete("/delete")]
-    public string DeleteReport (Report report){
+    public string DeleteReport (long id){
+        Report report = _context.Reports.Find(id);
         _context.Reports.Remove(report);
         return "Report deleted";
     }
