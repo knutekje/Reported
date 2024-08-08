@@ -14,7 +14,8 @@ public class Report (){
     public IFormFile? MyFile { get; set; }
 
     public byte[]? Image { get; set;}
-       
+    public Decimal? Quantity {get; set;}
+
     public required DateTime Date { get; set; }
     public required String ReportedBy { get; set; }
 

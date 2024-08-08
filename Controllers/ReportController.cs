@@ -23,7 +23,7 @@ public class ReportController : ControllerBase{
 
     }
     [HttpGet("{id}")]
-    public async Task<ActionResult<Report>>  GetReport (long id)
+    public async Task<ActionResult<Report>>  GetReport (int id)
      
     {
         var report = await _context.Reports.FindAsync(id);

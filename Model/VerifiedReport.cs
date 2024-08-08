@@ -18,6 +18,8 @@ public class VerifiedReport (){
     public required String ReportedBy {get;set;}
 
     public string? Description { get; set; }
+    public Decimal Value {get; set;}
+    public Decimal Quantity {get; set;}
 
     public Item Item {get; set;}
 
