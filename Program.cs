@@ -14,10 +14,10 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
-builder.Services.AddAntiforgery();
+builder.Services.AddAuthorization();
 
-
-builder.Services.AddIdentityCore<IdentityUser>().AddEntityFrameworkStores<ReportedContext>();
+builder.Services.AddIdentityCore<IdentityUser>()
+    .AddEntityFrameworkStores<ReportedContext>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie();
@@ -73,8 +73,12 @@ app.UseCors(builder => builder
        .AllowAnyMethod()
        .AllowAnyOrigin()
     );
-app.UseAuthorization();
+
 app.UseAuthentication();
+app.UseAuthorization();
+
+
+
 app.MapControllers();
 
 
