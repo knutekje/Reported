@@ -19,7 +19,8 @@ builder.Services.AddAntiforgery();
 
 builder.Services.AddIdentityCore<IdentityUser>().AddEntityFrameworkStores<ReportedContext>();
 
-
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie();
 
 builder.Services.AddControllers();
 
