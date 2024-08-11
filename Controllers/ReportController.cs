@@ -1,12 +1,14 @@
 
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
-
+using Reported.Data;
 using Reported.Model.Report;
 
 [ApiController]
 [Route("report/[controller]")]
+[Authorize]
 public class ReportController : ControllerBase{
     private readonly ReportedContext _context;
 

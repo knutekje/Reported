@@ -1,10 +1,28 @@
 using Microsoft.EntityFrameworkCore;
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Google;
 
-// Add services to the container.
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.HttpLogging;
+using System.Net;
+using Reported.Data;
+
+using Microsoft.AspNetCore.Mvc.Filters;
+
+
+
+var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
+builder.Services.AddAntiforgery();
+
+
+builder.Services.AddIdentityCore<IdentityUser>().AddEntityFrameworkStores<ReportedContext>();
+
+
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
@@ -19,18 +37,34 @@ builder.Services.AddCors(options =>
       });
 });
 
+
+
 builder.Services.AddDbContext<ReportedContext>(options =>
     options.UseNpgsql("Host=192.168.0.107;Database=reporteddb;Username=reported;Password=KlU91Xp"));
+    
+ 
+
+builder.Services.AddAuthorization();
+
+builder.Services.AddIdentityApiEndpoints<IdentityUser>()
+    .AddEntityFrameworkStores<ReportedContext>();
+
+    
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.MapIdentityApi<IdentityUser>();
+
 
 app.UseHttpsRedirection();
+
+
+
+
 
 app.UseRouting(); 
 app.UseCors(builder => builder
@@ -39,7 +73,21 @@ app.UseCors(builder => builder
        .AllowAnyOrigin()
     );
 app.UseAuthorization();
-
+app.UseAuthentication();
 app.MapControllers();
 
+
+
+           
+
 app.Run();
+
+public class LogActionFilter : ActionFilterAttribute
+{
+    public override void OnActionExecuting(ActionExecutingContext context)
+    {
+        var request = context.HttpContext.Request;
+        Console.WriteLine($"Request method: {request.Method}");
+        base.OnActionExecuting(context);
+    }
+};

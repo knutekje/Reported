@@ -103,3 +103,10 @@
 /home/knutekje/Documents/Code/Reported/obj/Debug/net8.0/Reported.pdb
 /home/knutekje/Documents/Code/Reported/obj/Debug/net8.0/Reported.genruntimeconfig.cache
 /home/knutekje/Documents/Code/Reported/obj/Debug/net8.0/ref/Reported.dll
+/home/knutekje/Documents/Code/Reported/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.Google.dll
+/home/knutekje/Documents/Code/Reported/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/knutekje/Documents/Code/Reported/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/knutekje/Documents/Code/Reported/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/knutekje/Documents/Code/Reported/bin/Debug/net8.0/Microsoft.Extensions.Identity.Core.dll
+/home/knutekje/Documents/Code/Reported/bin/Debug/net8.0/Microsoft.Extensions.Identity.Stores.dll
+/home/knutekje/Documents/Code/Reported/bin/Debug/net8.0/Microsoft.Extensions.Options.dll

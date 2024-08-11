@@ -1,13 +1,21 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Reported.Model.Report;
 
-public class ReportedContext : DbContext
+namespace Reported.Data;
+public class ReportedContext : IdentityDbContext<IdentityUser>
  {
-    public ReportedContext(DbContextOptions<ReportedContext> options)
-        : base(options){}
+     public ReportedContext(DbContextOptions<ReportedContext> options) :
+        base(options)
+    { }
+
+
     public DbSet<Report> Reports { get; set; } 
     public DbSet<VerifiedReport> VerifiedReports { get; set; }
     public DbSet<Item> Items { get; set; }
+   
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

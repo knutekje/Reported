@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Reported.Model.Report;
-
+using Reported.Data;
 
 
 [ApiController]
@@ -27,27 +27,6 @@ public class VerifiedController : ControllerBase{
     [HttpPost]
     public async Task<string> VerifyReportAsync(VerifiedReport verifiedReport){
         
-
-        /*
-        public int Id { get; set; }  
-        public required string Title { get; set; }
-        public string? Description { get; set; }
-        [NotMapped]
-        public IFormFile? MyFile { get; set; }
-        public byte[]? Image { get; set;}
-        public required DateTime Date { get; set; }
-        public required String ReportedBy {get;set;}*/
-
-        /* 
-        public int Id {get; set;}
-        public required string Title { get; set; }
-        public required DateTime ReportedTime {get; set;}
-        public required DateTime ProcessedTime {get; set;}
-        public required long ItemId {get; set;}
-        public required String ReportedBy {get;set;}
-        public string? Description { get; set; }
-        public Item Item {get; set;}
-        */
         
         var report = await _context.Reports.FindAsync(verifiedReport.Id);
         _ = _context.Reports.Remove(report);
