@@ -18,4 +18,9 @@ public class ItemsController : ControllerBase{
     {
         return _context.Items.ToList();
     }
+    [HttpGet("/get")]
+    public string Getsomething(){
+        return "HORSE SHIT";
+    }
+
 }
