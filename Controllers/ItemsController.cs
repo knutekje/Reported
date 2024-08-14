@@ -20,7 +20,7 @@ public class ItemsController : ControllerBase{
     }
     [HttpGet("/get")]
     public string Getsomething(){
-        return "HORSE SHIT";
+        return "HORSE  AND SHIT";
     }
 
 }
