@@ -1,11 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authentication.Google;
 
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.HttpLogging;
-using System.Net;
+
 using Reported.Data;
 
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -31,13 +28,24 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(
       policy =>
       {
-          policy
+          policy 
+            .WithOrigins("http://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
             
       });
 });
+/* 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyMyAllowCredentialsPolicy",
+        policy =>
+        {
+            policy.WithOrigins("http://example.com")
+                   .AllowCredentials();
+        });
+}); */
 
 
 
@@ -69,11 +77,11 @@ app.UseHttpsRedirection();
 
 
 app.UseRouting(); 
-app.UseCors(builder => builder
+app.UseCors(/* builder => builder
        .AllowAnyHeader()
        .AllowAnyMethod()
-    //   .AllowAnyOrigin()
-       .AllowCredentials()
+        .WithOrigins()
+       .AllowCredentials() */
     );
 
 app.UseAuthentication();
