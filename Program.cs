@@ -34,8 +34,8 @@ builder.Services.AddCors(options =>
           policy
             .AllowAnyHeader()
             .AllowAnyMethod()
-            .AllowCredentials()
-            .AllowAnyOrigin();
+            .AllowCredentials();
+            
       });
 });
 
@@ -72,7 +72,7 @@ app.UseRouting();
 app.UseCors(builder => builder
        .AllowAnyHeader()
        .AllowAnyMethod()
-       .AllowAnyOrigin()
+    //   .AllowAnyOrigin()
        .AllowCredentials()
     );
 
