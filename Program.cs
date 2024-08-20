@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Reported.Data;
 
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.CookiePolicy;
 
 
 
@@ -18,7 +19,8 @@ builder.Services.AddIdentityCore<IdentityUser>()
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie();
-
+           
+         
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -91,7 +93,12 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
+app.UseCookiePolicy(new()
+{
+    HttpOnly = HttpOnlyPolicy.Always,
+    Secure = CookieSecurePolicy.Always,
+    MinimumSameSitePolicy = SameSiteMode.None,
+});
 
            
 
