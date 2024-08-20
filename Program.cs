@@ -31,23 +31,22 @@ builder.Services.AddCors(options =>
       policy =>
       {
           policy 
-            .WithOrigins("http://localhost:3000")
+            .WithOrigins("http://localhost:3000",
+                            "https://localhost:3000",
+                            "http://192.168.*",
+                            "http://192.168.0.109",
+                            "http://192.168.0.107",
+                            "http://debstar*",
+                            "https://debstar*"
+                            )
+
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
             
       });
 });
-/* 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("MyMyAllowCredentialsPolicy",
-        policy =>
-        {
-            policy.WithOrigins("http://example.com")
-                   .AllowCredentials();
-        });
-}); */
+
 
 
 
@@ -79,12 +78,7 @@ app.UseHttpsRedirection();
 
 
 app.UseRouting(); 
-app.UseCors(/* builder => builder
-       .AllowAnyHeader()
-       .AllowAnyMethod()
-        .WithOrigins()
-       .AllowCredentials() */
-    );
+app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -94,7 +88,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseCookiePolicy(new()
-{
+{   
+    
     HttpOnly = HttpOnlyPolicy.Always,
     Secure = CookieSecurePolicy.Always,
     MinimumSameSitePolicy = SameSiteMode.None,
