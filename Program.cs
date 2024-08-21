@@ -33,11 +33,11 @@ builder.Services.AddCors(options =>
           policy 
             .WithOrigins("http://localhost:3000",
                             "https://localhost:3000",
-                            "http://192.168.*",
-                            "http://192.168.0.109",
-                            "http://192.168.0.107",
-                            "http://debstar*",
-                            "https://debstar*"
+                            "http://localhost:8000",
+                            "http://debstar:8000"
+                            
+                            
+                           
                             )
 
             .AllowAnyHeader()
