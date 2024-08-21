@@ -34,10 +34,8 @@ builder.Services.AddCors(options =>
             .WithOrigins("http://localhost:3000",
                             "https://localhost:3000",
                             "http://localhost:8000",
-                            "http://debstar:8000"
-                            
-                            
-                           
+                            "http://debstar:8000",
+                            "http://195.181.150.26:8000"
                             )
 
             .AllowAnyHeader()
@@ -52,9 +50,6 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddDbContext<ReportedContext>(options =>
     options.UseNpgsql("Host=192.168.0.107;Database=reporteddb;Username=reported;Password=KlU91Xp"));
-    
- 
-
 builder.Services.AddAuthorization();
 
 builder.Services.AddIdentityApiEndpoints<IdentityUser>()
